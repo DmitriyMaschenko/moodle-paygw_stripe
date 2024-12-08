@@ -112,6 +112,9 @@ class gateway extends \core_payment\gateway {
         $mform->addElement('advcheckbox', 'enableautomatictax', get_string('enableautomatictax', 'paygw_stripe'),
             get_string('enableautomatictax_desc', 'paygw_stripe'));
 
+        $mform->addElement('advcheckbox', 'automaticinvoices', get_string('automaticinvoices', 'paygw_stripe'));
+        $mform->setDefault('automaticinvoices', true);
+
         $mform->addElement('select', 'defaulttaxbehavior', get_string('defaulttaxbehavior', 'paygw_stripe'), [
             'exclusive' => get_string('taxbehavior:exclusive', 'paygw_stripe'),
             'inclusive' => get_string('taxbehavior:inclusive', 'paygw_stripe'),
