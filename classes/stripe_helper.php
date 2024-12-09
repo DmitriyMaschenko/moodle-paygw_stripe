@@ -332,7 +332,8 @@ class stripe_helper {
             'mode' => 'payment',
             'line_items' => [[
                 'price' => $price,
-                'quantity' => 1
+                'quantity' => 1,
+                'tax_rates' => [$config->mandatorytax],
             ]],
             'automatic_tax' => [
                 'enabled' => $config->enableautomatictax == 1,

@@ -40,6 +40,7 @@ $string['paymentpending'] = 'Payment is pending, you will be enrolled when the p
 $string['customerdescription'] = 'Moodle User ID: {$a}';
 $string['automaticinvoices'] = 'Enable automatic invoicing';
 $string['enableautomatictax'] = 'Enable automatic tax';
+$string['mandatorytax'] = 'Mandatory tax rate';
 $string['enableautomatictax_desc'] = 'Automatic tax must be enabled and configured in the Stripe dashboard.';
 $string['defaulttaxbehavior'] = 'Default tax behavior';
 $string['defaulttaxbehavior_help'] = 'Default behavior of tax (inclusive, exclusive). Changeable in Stripe dashboard.';
