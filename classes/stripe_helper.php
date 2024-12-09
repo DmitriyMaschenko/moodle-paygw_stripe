@@ -338,16 +338,16 @@ class stripe_helper {
                 'enabled' => $config->enableautomatictax == 1,
             ],
             'customer' => $customer->id,
-            'billing_address_collection' => $config->automaticinvoicing == 1 ? "required" : "auto",
+            'billing_address_collection' => $config->automaticinvoices == 1 ? "required" : "auto",
             'invoice_creation' => [
-                'enabled' => $config->automaticinvoicing == 1,
+                'enabled' => $config->automaticinvoices == 1,
                 'invoice_data' => [
                     'issuer' => [
                         'type' => "self",
                     ],
                     'description' => $description,
                     'rendering_options' => [
-                        'amount_tax_display': "include_inclusive_tax",
+                        'amount_tax_display' => "include_inclusive_tax",
                     ],
                 ],
             ],
