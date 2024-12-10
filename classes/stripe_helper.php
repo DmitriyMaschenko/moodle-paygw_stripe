@@ -436,6 +436,7 @@ class stripe_helper {
             'line_items' => [[
                 'price' => $price,
                 'quantity' => 1,
+                'tax_rates' => [$config->mandatorytax],
             ]],
             'automatic_tax' => [
                 'enabled' => $config->enableautomatictax == 1,
@@ -443,6 +444,19 @@ class stripe_helper {
             'allow_promotion_codes' => $config->allowpromotioncodes == 1,
             'subscription_data' => $subscriptiondata,
             'customer' => $customer->id,
+            'billing_address_collection' => $config->automaticinvoices == 1 ? "required" : "auto",
+            'invoice_creation' => [
+                'enabled' => $config->automaticinvoices == 1,
+                'invoice_data' => [
+                    'issuer' => [
+                        'type' => "self",
+                    ],
+                    'description' => $description,
+                    'rendering_options' => [
+                        'amount_tax_display' => "include_inclusive_tax",
+                    ],
+                ],
+            ],
             'metadata' => [
                 'userid' => $USER->id,
                 'username' => $USER->username,
