@@ -346,7 +346,6 @@ class stripe_helper {
                     'issuer' => [
                         'type' => "self",
                     ],
-                    'description' => $description,
                     'rendering_options' => [
                         'amount_tax_display' => "include_inclusive_tax",
                     ],
@@ -451,7 +450,6 @@ class stripe_helper {
                     'issuer' => [
                         'type' => "self",
                     ],
-                    'description' => $description,
                     'rendering_options' => [
                         'amount_tax_display' => "include_inclusive_tax",
                     ],
