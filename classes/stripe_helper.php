@@ -444,17 +444,6 @@ class stripe_helper {
             'subscription_data' => $subscriptiondata,
             'customer' => $customer->id,
             'billing_address_collection' => $config->automaticinvoices == 1 ? "required" : "auto",
-            'invoice_creation' => [
-                'enabled' => $config->automaticinvoices == 1,
-                'invoice_data' => [
-                    'issuer' => [
-                        'type' => "self",
-                    ],
-                    'rendering_options' => [
-                        'amount_tax_display' => "include_inclusive_tax",
-                    ],
-                ],
-            ],
             'metadata' => [
                 'userid' => $USER->id,
                 'username' => $USER->username,
