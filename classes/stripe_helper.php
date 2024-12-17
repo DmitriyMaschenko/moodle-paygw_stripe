@@ -443,7 +443,7 @@ class stripe_helper {
             'allow_promotion_codes' => $config->allowpromotioncodes == 1,
             'subscription_data' => $subscriptiondata,
             'customer' => $customer->id,
-            'billing_address_collection' => $config->automaticinvoices == 1 ? "required" : "auto",
+            'billing_address_collection' => "required",
             'metadata' => [
                 'userid' => $USER->id,
                 'username' => $USER->username,
